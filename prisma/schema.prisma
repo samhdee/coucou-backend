@@ -1,16 +1,11 @@
 generator client {
-    provider = "prisma-client"
-    output   = "../generated/prisma"
+    provider     = "prisma-client"
+    output       = "../generated/prisma"
+    moduleFormat = "cjs"
 }
 
 datasource db {
     provider = "mysql"
-}
-
-enum TimerStatus {
-    RUNNING
-    PAUSED
-    STOPPED
 }
 
 enum TimerType {
@@ -19,13 +14,12 @@ enum TimerType {
 }
 
 model Timer {
-    id        String      @id @default(cuid())
+    id        String    @id @default(cuid())
     uuid      String
-    status    TimerStatus @default(RUNNING)
     endTime   DateTime
-    type      TimerType   @default(WORK)
-    createdAt DateTime    @default(now())
-    updatedAt DateTime    @updatedAt
+    type      TimerType @default(WORK)
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
 }
 
 model PastTimers {

@@ -16,10 +16,10 @@
  */
 
 import * as runtime from "@prisma/client/runtime/client"
-import type * as Prisma from "../models.js"
-import { type PrismaClient } from "./class.js"
+import type * as Prisma from "../models"
+import { type PrismaClient } from "./class"
 
-export type * from '../models.js'
+export type * from '../models'
 
 export type DMMF = typeof runtime.DMMF
 
@@ -592,7 +592,6 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const TimerScalarFieldEnum = {
   id: 'id',
   uuid: 'uuid',
-  status: 'status',
   endTime: 'endTime',
   type: 'type',
   createdAt: 'createdAt',
@@ -645,13 +644,6 @@ export type PastTimersOrderByRelevanceFieldEnum = (typeof PastTimersOrderByRelev
  * Reference to a field of type 'String'
  */
 export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
-
-
-/**
- * Reference to a field of type 'TimerStatus'
- */
-export type EnumTimerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TimerStatus'>
     
 
 

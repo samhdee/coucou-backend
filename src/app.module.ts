@@ -1,12 +1,8 @@
-import {Module} from '@nestjs/common';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
-import { TimerController } from './timer/timer.controller';
+import { Module } from '@nestjs/common';
+import { PrismaModule } from './prisma/prisma.module';
+import { TimersModule } from './timer/timer.module';
 
 @Module({
-    imports: [],
-    controllers: [AppController, TimerController],
-    providers: [AppService],
+  imports: [PrismaModule, TimersModule],
 })
-export class AppModule {
-}
+export class AppModule {}

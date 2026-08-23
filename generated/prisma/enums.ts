@@ -9,15 +9,6 @@
 * 🟢 You can import this file directly.
 */
 
-export const TimerStatus = {
-  RUNNING: 'RUNNING',
-  PAUSED: 'PAUSED',
-  STOPPED: 'STOPPED'
-} as const
-
-export type TimerStatus = (typeof TimerStatus)[keyof typeof TimerStatus]
-
-
 export const TimerType = {
   WORK: 'WORK',
   PAUSE: 'PAUSE'

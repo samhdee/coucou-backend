@@ -10,8 +10,8 @@
  */
 
 import type * as runtime from "@prisma/client/runtime/client"
-import * as $Enums from "./enums.js"
-import type * as Prisma from "./internal/prismaNamespace.js"
+import * as $Enums from "./enums"
+import type * as Prisma from "./internal/prismaNamespace"
 
 
 export type StringFilter<$PrismaModel = never> = {
@@ -27,13 +27,6 @@ export type StringFilter<$PrismaModel = never> = {
   endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
   search?: string
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
-}
-
-export type EnumTimerStatusFilter<$PrismaModel = never> = {
-  equals?: $Enums.TimerStatus | Prisma.EnumTimerStatusFieldRefInput<$PrismaModel>
-  in?: $Enums.TimerStatus[]
-  notIn?: $Enums.TimerStatus[]
-  not?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel> | $Enums.TimerStatus
 }
 
 export type DateTimeFilter<$PrismaModel = never> = {
@@ -70,16 +63,6 @@ export type StringWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedStringFilter<$PrismaModel>
   _max?: Prisma.NestedStringFilter<$PrismaModel>
-}
-
-export type EnumTimerStatusWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.TimerStatus | Prisma.EnumTimerStatusFieldRefInput<$PrismaModel>
-  in?: $Enums.TimerStatus[]
-  notIn?: $Enums.TimerStatus[]
-  not?: Prisma.NestedEnumTimerStatusWithAggregatesFilter<$PrismaModel> | $Enums.TimerStatus
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel>
 }
 
 export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -148,13 +131,6 @@ export type NestedStringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
 }
 
-export type NestedEnumTimerStatusFilter<$PrismaModel = never> = {
-  equals?: $Enums.TimerStatus | Prisma.EnumTimerStatusFieldRefInput<$PrismaModel>
-  in?: $Enums.TimerStatus[]
-  notIn?: $Enums.TimerStatus[]
-  not?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel> | $Enums.TimerStatus
-}
-
 export type NestedDateTimeFilter<$PrismaModel = never> = {
   equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
   in?: Date[] | string[]
@@ -200,16 +176,6 @@ export type NestedIntFilter<$PrismaModel = never> = {
   gt?: number | Prisma.IntFieldRefInput<$PrismaModel>
   gte?: number | Prisma.IntFieldRefInput<$PrismaModel>
   not?: Prisma.NestedIntFilter<$PrismaModel> | number
-}
-
-export type NestedEnumTimerStatusWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.TimerStatus | Prisma.EnumTimerStatusFieldRefInput<$PrismaModel>
-  in?: $Enums.TimerStatus[]
-  notIn?: $Enums.TimerStatus[]
-  not?: Prisma.NestedEnumTimerStatusWithAggregatesFilter<$PrismaModel> | $Enums.TimerStatus
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumTimerStatusFilter<$PrismaModel>
 }
 
 export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

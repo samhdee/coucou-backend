@@ -8,6 +8,6 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Timer.js'
-export type * from './models/PastTimers.js'
-export type * from './commonInputTypes.js'
+export type * from './models/Timer'
+export type * from './models/PastTimers'
+export type * from './commonInputTypes'

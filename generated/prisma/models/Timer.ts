@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Timer
@@ -27,7 +27,6 @@ export type AggregateTimer = {
 export type TimerMinAggregateOutputType = {
   id: string | null
   uuid: string | null
-  status: $Enums.TimerStatus | null
   endTime: Date | null
   type: $Enums.TimerType | null
   createdAt: Date | null
@@ -37,7 +36,6 @@ export type TimerMinAggregateOutputType = {
 export type TimerMaxAggregateOutputType = {
   id: string | null
   uuid: string | null
-  status: $Enums.TimerStatus | null
   endTime: Date | null
   type: $Enums.TimerType | null
   createdAt: Date | null
@@ -47,7 +45,6 @@ export type TimerMaxAggregateOutputType = {
 export type TimerCountAggregateOutputType = {
   id: number
   uuid: number
-  status: number
   endTime: number
   type: number
   createdAt: number
@@ -59,7 +56,6 @@ export type TimerCountAggregateOutputType = {
 export type TimerMinAggregateInputType = {
   id?: true
   uuid?: true
-  status?: true
   endTime?: true
   type?: true
   createdAt?: true
@@ -69,7 +65,6 @@ export type TimerMinAggregateInputType = {
 export type TimerMaxAggregateInputType = {
   id?: true
   uuid?: true
-  status?: true
   endTime?: true
   type?: true
   createdAt?: true
@@ -79,7 +74,6 @@ export type TimerMaxAggregateInputType = {
 export type TimerCountAggregateInputType = {
   id?: true
   uuid?: true
-  status?: true
   endTime?: true
   type?: true
   createdAt?: true
@@ -162,7 +156,6 @@ export type TimerGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type TimerGroupByOutputType = {
   id: string
   uuid: string
-  status: $Enums.TimerStatus
   endTime: Date
   type: $Enums.TimerType
   createdAt: Date
@@ -193,7 +186,6 @@ export type TimerWhereInput = {
   NOT?: Prisma.TimerWhereInput | Prisma.TimerWhereInput[]
   id?: Prisma.StringFilter<"Timer"> | string
   uuid?: Prisma.StringFilter<"Timer"> | string
-  status?: Prisma.EnumTimerStatusFilter<"Timer"> | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFilter<"Timer"> | Date | string
   type?: Prisma.EnumTimerTypeFilter<"Timer"> | $Enums.TimerType
   createdAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
@@ -203,7 +195,6 @@ export type TimerWhereInput = {
 export type TimerOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   uuid?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   endTime?: Prisma.SortOrder
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -217,7 +208,6 @@ export type TimerWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.TimerWhereInput[]
   NOT?: Prisma.TimerWhereInput | Prisma.TimerWhereInput[]
   uuid?: Prisma.StringFilter<"Timer"> | string
-  status?: Prisma.EnumTimerStatusFilter<"Timer"> | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFilter<"Timer"> | Date | string
   type?: Prisma.EnumTimerTypeFilter<"Timer"> | $Enums.TimerType
   createdAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
@@ -227,7 +217,6 @@ export type TimerWhereUniqueInput = Prisma.AtLeast<{
 export type TimerOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   uuid?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   endTime?: Prisma.SortOrder
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -243,7 +232,6 @@ export type TimerScalarWhereWithAggregatesInput = {
   NOT?: Prisma.TimerScalarWhereWithAggregatesInput | Prisma.TimerScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Timer"> | string
   uuid?: Prisma.StringWithAggregatesFilter<"Timer"> | string
-  status?: Prisma.EnumTimerStatusWithAggregatesFilter<"Timer"> | $Enums.TimerStatus
   endTime?: Prisma.DateTimeWithAggregatesFilter<"Timer"> | Date | string
   type?: Prisma.EnumTimerTypeWithAggregatesFilter<"Timer"> | $Enums.TimerType
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Timer"> | Date | string
@@ -253,7 +241,6 @@ export type TimerScalarWhereWithAggregatesInput = {
 export type TimerCreateInput = {
   id?: string
   uuid: string
-  status?: $Enums.TimerStatus
   endTime: Date | string
   type?: $Enums.TimerType
   createdAt?: Date | string
@@ -263,7 +250,6 @@ export type TimerCreateInput = {
 export type TimerUncheckedCreateInput = {
   id?: string
   uuid: string
-  status?: $Enums.TimerStatus
   endTime: Date | string
   type?: $Enums.TimerType
   createdAt?: Date | string
@@ -273,7 +259,6 @@ export type TimerUncheckedCreateInput = {
 export type TimerUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   uuid?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumTimerStatusFieldUpdateOperationsInput | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -283,7 +268,6 @@ export type TimerUpdateInput = {
 export type TimerUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   uuid?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumTimerStatusFieldUpdateOperationsInput | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -293,7 +277,6 @@ export type TimerUncheckedUpdateInput = {
 export type TimerCreateManyInput = {
   id?: string
   uuid: string
-  status?: $Enums.TimerStatus
   endTime: Date | string
   type?: $Enums.TimerType
   createdAt?: Date | string
@@ -303,7 +286,6 @@ export type TimerCreateManyInput = {
 export type TimerUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   uuid?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumTimerStatusFieldUpdateOperationsInput | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -313,7 +295,6 @@ export type TimerUpdateManyMutationInput = {
 export type TimerUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   uuid?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumTimerStatusFieldUpdateOperationsInput | $Enums.TimerStatus
   endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -329,7 +310,6 @@ export type TimerOrderByRelevanceInput = {
 export type TimerCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   uuid?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   endTime?: Prisma.SortOrder
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -339,7 +319,6 @@ export type TimerCountOrderByAggregateInput = {
 export type TimerMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   uuid?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   endTime?: Prisma.SortOrder
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -349,7 +328,6 @@ export type TimerMaxOrderByAggregateInput = {
 export type TimerMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   uuid?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   endTime?: Prisma.SortOrder
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -358,10 +336,6 @@ export type TimerMinOrderByAggregateInput = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
-}
-
-export type EnumTimerStatusFieldUpdateOperationsInput = {
-  set?: $Enums.TimerStatus
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -377,7 +351,6 @@ export type EnumTimerTypeFieldUpdateOperationsInput = {
 export type TimerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   uuid?: boolean
-  status?: boolean
   endTime?: boolean
   type?: boolean
   createdAt?: boolean
@@ -389,14 +362,13 @@ export type TimerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
 export type TimerSelectScalar = {
   id?: boolean
   uuid?: boolean
-  status?: boolean
   endTime?: boolean
   type?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type TimerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "uuid" | "status" | "endTime" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["timer"]>
+export type TimerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "uuid" | "endTime" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["timer"]>
 
 export type $TimerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Timer"
@@ -404,7 +376,6 @@ export type $TimerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     uuid: string
-    status: $Enums.TimerStatus
     endTime: Date
     type: $Enums.TimerType
     createdAt: Date
@@ -780,7 +751,6 @@ export interface Prisma__TimerClient<T, Null = never, ExtArgs extends runtime.Ty
 export interface TimerFieldRefs {
   readonly id: Prisma.FieldRef<"Timer", 'String'>
   readonly uuid: Prisma.FieldRef<"Timer", 'String'>
-  readonly status: Prisma.FieldRef<"Timer", 'TimerStatus'>
   readonly endTime: Prisma.FieldRef<"Timer", 'DateTime'>
   readonly type: Prisma.FieldRef<"Timer", 'TimerType'>
   readonly createdAt: Prisma.FieldRef<"Timer", 'DateTime'>
