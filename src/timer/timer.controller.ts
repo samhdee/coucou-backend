@@ -14,22 +14,29 @@ export class TimerController {
     constructor(private readonly timersService: TimersService) {
     }
 
-    @Post()
-    create(@Body('duration') duration: number) {
-        const created = this.timersService.create(duration);
-
-        this.timersService.storeTimerDuraction(duration);
-
-        return created;
+    @Get('durations')
+    getAllDurations() {
+        return this.timersService.getAllDurations();
     }
 
-    @Get()
-    findAll() {
-        return this.timersService.findAll();
+    @Post()
+    create(@Body('duration') duration: string) {
+        const duration_number = parseInt(duration);
+
+        const created = this.timersService.create(duration_number);
+
+        this.timersService.storeTimerDuraction(duration_number);
+
+        return created;
     }
 
     @Get(':uuid')
     findOne(@Param('uuid') uuid: string) {
         return this.timersService.findOne(uuid);
+    }
+
+    @Get()
+    findAll() {
+        return this.timersService.findAll();
     }
 }

@@ -41,6 +41,10 @@ export class TimersService {
     }
 
     async storeTimerDuraction(duration: number) {
+        if (duration == 0) {
+            return;
+        }
+
         const past_timer = await this.prisma.pastTimers.findFirst({
             where: {duration},
         });
@@ -51,6 +55,13 @@ export class TimersService {
 
         await this.prisma.pastTimers.create({
             data: {duration}
+        });
+    }
+
+    async getAllDurations() {
+        return this.prisma.pastTimers.findMany({
+            select: {duration: true},
+            orderBy: {duration: 'asc'}
         })
     }
 }
