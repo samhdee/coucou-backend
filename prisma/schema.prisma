@@ -20,6 +20,7 @@ model Timer {
     type      TimerType @default(WORK)
     createdAt DateTime  @default(now())
     updatedAt DateTime  @updatedAt
+    users     User[]
 }
 
 model PastTimers {
@@ -27,4 +28,14 @@ model PastTimers {
     duration  Int
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+}
+
+model User {
+    id         String   @id @default(uuid())
+    discordId  String   @unique
+    username   String
+    avatar     String?
+    email      String?
+    createdAt  DateTime @default(now())
+    timers     Timer[]
 }

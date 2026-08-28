@@ -10,4 +10,5 @@
  */
 export type * from './models/Timer'
 export type * from './models/PastTimers'
+export type * from './models/User'
 export type * from './commonInputTypes'

@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Timer: 'Timer',
-  PastTimers: 'PastTimers'
+  PastTimers: 'PastTimers',
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -93,6 +94,18 @@ export const PastTimersScalarFieldEnum = {
 export type PastTimersScalarFieldEnum = (typeof PastTimersScalarFieldEnum)[keyof typeof PastTimersScalarFieldEnum]
 
 
+export const UserScalarFieldEnum = {
+  id: 'id',
+  discordId: 'discordId',
+  username: 'username',
+  avatar: 'avatar',
+  email: 'email',
+  createdAt: 'createdAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -114,4 +127,23 @@ export const PastTimersOrderByRelevanceFieldEnum = {
 } as const
 
 export type PastTimersOrderByRelevanceFieldEnum = (typeof PastTimersOrderByRelevanceFieldEnum)[keyof typeof PastTimersOrderByRelevanceFieldEnum]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const UserOrderByRelevanceFieldEnum = {
+  id: 'id',
+  discordId: 'discordId',
+  username: 'username',
+  avatar: 'avatar',
+  email: 'email'
+} as const
+
+export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
 

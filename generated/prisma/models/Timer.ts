@@ -190,6 +190,7 @@ export type TimerWhereInput = {
   type?: Prisma.EnumTimerTypeFilter<"Timer"> | $Enums.TimerType
   createdAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
+  users?: Prisma.UserListRelationFilter
 }
 
 export type TimerOrderByWithRelationInput = {
@@ -199,6 +200,7 @@ export type TimerOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  users?: Prisma.UserOrderByRelationAggregateInput
   _relevance?: Prisma.TimerOrderByRelevanceInput
 }
 
@@ -212,6 +214,7 @@ export type TimerWhereUniqueInput = Prisma.AtLeast<{
   type?: Prisma.EnumTimerTypeFilter<"Timer"> | $Enums.TimerType
   createdAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
+  users?: Prisma.UserListRelationFilter
 }, "id">
 
 export type TimerOrderByWithAggregationInput = {
@@ -245,6 +248,7 @@ export type TimerCreateInput = {
   type?: $Enums.TimerType
   createdAt?: Date | string
   updatedAt?: Date | string
+  users?: Prisma.UserCreateNestedManyWithoutTimersInput
 }
 
 export type TimerUncheckedCreateInput = {
@@ -254,6 +258,7 @@ export type TimerUncheckedCreateInput = {
   type?: $Enums.TimerType
   createdAt?: Date | string
   updatedAt?: Date | string
+  users?: Prisma.UserUncheckedCreateNestedManyWithoutTimersInput
 }
 
 export type TimerUpdateInput = {
@@ -263,6 +268,7 @@ export type TimerUpdateInput = {
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserUpdateManyWithoutTimersNestedInput
 }
 
 export type TimerUncheckedUpdateInput = {
@@ -272,6 +278,7 @@ export type TimerUncheckedUpdateInput = {
   type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserUncheckedUpdateManyWithoutTimersNestedInput
 }
 
 export type TimerCreateManyInput = {
@@ -334,6 +341,16 @@ export type TimerMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
+export type TimerListRelationFilter = {
+  every?: Prisma.TimerWhereInput
+  some?: Prisma.TimerWhereInput
+  none?: Prisma.TimerWhereInput
+}
+
+export type TimerOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
 export type StringFieldUpdateOperationsInput = {
   set?: string
 }
@@ -346,6 +363,151 @@ export type EnumTimerTypeFieldUpdateOperationsInput = {
   set?: $Enums.TimerType
 }
 
+export type TimerCreateNestedManyWithoutUsersInput = {
+  create?: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput> | Prisma.TimerCreateWithoutUsersInput[] | Prisma.TimerUncheckedCreateWithoutUsersInput[]
+  connectOrCreate?: Prisma.TimerCreateOrConnectWithoutUsersInput | Prisma.TimerCreateOrConnectWithoutUsersInput[]
+  connect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+}
+
+export type TimerUncheckedCreateNestedManyWithoutUsersInput = {
+  create?: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput> | Prisma.TimerCreateWithoutUsersInput[] | Prisma.TimerUncheckedCreateWithoutUsersInput[]
+  connectOrCreate?: Prisma.TimerCreateOrConnectWithoutUsersInput | Prisma.TimerCreateOrConnectWithoutUsersInput[]
+  connect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+}
+
+export type TimerUpdateManyWithoutUsersNestedInput = {
+  create?: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput> | Prisma.TimerCreateWithoutUsersInput[] | Prisma.TimerUncheckedCreateWithoutUsersInput[]
+  connectOrCreate?: Prisma.TimerCreateOrConnectWithoutUsersInput | Prisma.TimerCreateOrConnectWithoutUsersInput[]
+  upsert?: Prisma.TimerUpsertWithWhereUniqueWithoutUsersInput | Prisma.TimerUpsertWithWhereUniqueWithoutUsersInput[]
+  set?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  disconnect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  delete?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  connect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  update?: Prisma.TimerUpdateWithWhereUniqueWithoutUsersInput | Prisma.TimerUpdateWithWhereUniqueWithoutUsersInput[]
+  updateMany?: Prisma.TimerUpdateManyWithWhereWithoutUsersInput | Prisma.TimerUpdateManyWithWhereWithoutUsersInput[]
+  deleteMany?: Prisma.TimerScalarWhereInput | Prisma.TimerScalarWhereInput[]
+}
+
+export type TimerUncheckedUpdateManyWithoutUsersNestedInput = {
+  create?: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput> | Prisma.TimerCreateWithoutUsersInput[] | Prisma.TimerUncheckedCreateWithoutUsersInput[]
+  connectOrCreate?: Prisma.TimerCreateOrConnectWithoutUsersInput | Prisma.TimerCreateOrConnectWithoutUsersInput[]
+  upsert?: Prisma.TimerUpsertWithWhereUniqueWithoutUsersInput | Prisma.TimerUpsertWithWhereUniqueWithoutUsersInput[]
+  set?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  disconnect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  delete?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  connect?: Prisma.TimerWhereUniqueInput | Prisma.TimerWhereUniqueInput[]
+  update?: Prisma.TimerUpdateWithWhereUniqueWithoutUsersInput | Prisma.TimerUpdateWithWhereUniqueWithoutUsersInput[]
+  updateMany?: Prisma.TimerUpdateManyWithWhereWithoutUsersInput | Prisma.TimerUpdateManyWithWhereWithoutUsersInput[]
+  deleteMany?: Prisma.TimerScalarWhereInput | Prisma.TimerScalarWhereInput[]
+}
+
+export type TimerCreateWithoutUsersInput = {
+  id?: string
+  uuid: string
+  endTime: Date | string
+  type?: $Enums.TimerType
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type TimerUncheckedCreateWithoutUsersInput = {
+  id?: string
+  uuid: string
+  endTime: Date | string
+  type?: $Enums.TimerType
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type TimerCreateOrConnectWithoutUsersInput = {
+  where: Prisma.TimerWhereUniqueInput
+  create: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput>
+}
+
+export type TimerUpsertWithWhereUniqueWithoutUsersInput = {
+  where: Prisma.TimerWhereUniqueInput
+  update: Prisma.XOR<Prisma.TimerUpdateWithoutUsersInput, Prisma.TimerUncheckedUpdateWithoutUsersInput>
+  create: Prisma.XOR<Prisma.TimerCreateWithoutUsersInput, Prisma.TimerUncheckedCreateWithoutUsersInput>
+}
+
+export type TimerUpdateWithWhereUniqueWithoutUsersInput = {
+  where: Prisma.TimerWhereUniqueInput
+  data: Prisma.XOR<Prisma.TimerUpdateWithoutUsersInput, Prisma.TimerUncheckedUpdateWithoutUsersInput>
+}
+
+export type TimerUpdateManyWithWhereWithoutUsersInput = {
+  where: Prisma.TimerScalarWhereInput
+  data: Prisma.XOR<Prisma.TimerUpdateManyMutationInput, Prisma.TimerUncheckedUpdateManyWithoutUsersInput>
+}
+
+export type TimerScalarWhereInput = {
+  AND?: Prisma.TimerScalarWhereInput | Prisma.TimerScalarWhereInput[]
+  OR?: Prisma.TimerScalarWhereInput[]
+  NOT?: Prisma.TimerScalarWhereInput | Prisma.TimerScalarWhereInput[]
+  id?: Prisma.StringFilter<"Timer"> | string
+  uuid?: Prisma.StringFilter<"Timer"> | string
+  endTime?: Prisma.DateTimeFilter<"Timer"> | Date | string
+  type?: Prisma.EnumTimerTypeFilter<"Timer"> | $Enums.TimerType
+  createdAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Timer"> | Date | string
+}
+
+export type TimerUpdateWithoutUsersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  uuid?: Prisma.StringFieldUpdateOperationsInput | string
+  endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type TimerUncheckedUpdateWithoutUsersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  uuid?: Prisma.StringFieldUpdateOperationsInput | string
+  endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type TimerUncheckedUpdateManyWithoutUsersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  uuid?: Prisma.StringFieldUpdateOperationsInput | string
+  endTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  type?: Prisma.EnumTimerTypeFieldUpdateOperationsInput | $Enums.TimerType
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type TimerCountOutputType
+ */
+
+export type TimerCountOutputType = {
+  users: number
+}
+
+export type TimerCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  users?: boolean | TimerCountOutputTypeCountUsersArgs
+}
+
+/**
+ * TimerCountOutputType without action
+ */
+export type TimerCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TimerCountOutputType
+   */
+  select?: Prisma.TimerCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * TimerCountOutputType without action
+ */
+export type TimerCountOutputTypeCountUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserWhereInput
+}
 
 
 export type TimerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -355,6 +517,8 @@ export type TimerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   type?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  users?: boolean | Prisma.Timer$usersArgs<ExtArgs>
+  _count?: boolean | Prisma.TimerCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["timer"]>
 
 
@@ -369,10 +533,16 @@ export type TimerSelectScalar = {
 }
 
 export type TimerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "uuid" | "endTime" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["timer"]>
+export type TimerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  users?: boolean | Prisma.Timer$usersArgs<ExtArgs>
+  _count?: boolean | Prisma.TimerCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $TimerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Timer"
-  objects: {}
+  objects: {
+    users: Prisma.$UserPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     uuid: string
@@ -720,6 +890,7 @@ readonly fields: TimerFieldRefs;
  */
 export interface Prisma__TimerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  users<T extends Prisma.Timer$usersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Timer$usersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -772,6 +943,10 @@ export type TimerFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Interna
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * Filter, which Timer to fetch.
    */
   where: Prisma.TimerWhereUniqueInput
@@ -790,6 +965,10 @@ export type TimerFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * Filter, which Timer to fetch.
    */
   where: Prisma.TimerWhereUniqueInput
@@ -807,6 +986,10 @@ export type TimerFindFirstArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Omit specific fields from the Timer
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
   /**
    * Filter, which Timer to fetch.
    */
@@ -856,6 +1039,10 @@ export type TimerFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * Filter, which Timer to fetch.
    */
   where?: Prisma.TimerWhereInput
@@ -903,6 +1090,10 @@ export type TimerFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Omit specific fields from the Timer
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
   /**
    * Filter, which Timers to fetch.
    */
@@ -952,6 +1143,10 @@ export type TimerCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * The data needed to create a Timer.
    */
   data: Prisma.XOR<Prisma.TimerCreateInput, Prisma.TimerUncheckedCreateInput>
@@ -980,6 +1175,10 @@ export type TimerUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Timer
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
   /**
    * The data needed to update a Timer.
    */
@@ -1021,6 +1220,10 @@ export type TimerUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * The filter to search for the Timer to update in case it exists.
    */
   where: Prisma.TimerWhereUniqueInput
@@ -1047,6 +1250,10 @@ export type TimerDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
+  /**
    * Filter which Timer to delete.
    */
   where: Prisma.TimerWhereUniqueInput
@@ -1067,6 +1274,30 @@ export type TimerDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
+ * Timer.users
+ */
+export type Timer$usersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  cursor?: Prisma.UserWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
  * Timer without action
  */
 export type TimerDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1078,4 +1309,8 @@ export type TimerDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Omit specific fields from the Timer
    */
   omit?: Prisma.TimerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimerInclude<ExtArgs> | null
 }

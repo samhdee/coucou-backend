@@ -27,3 +27,8 @@ export type Timer = Prisma.TimerModel
  * 
  */
 export type PastTimers = Prisma.PastTimersModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel

@@ -1,10 +1,8 @@
 import {
     Body,
     Controller,
-    Delete,
     Get,
     Param,
-    Patch,
     Post,
 } from '@nestjs/common';
 import {TimersService} from './timer.service';
